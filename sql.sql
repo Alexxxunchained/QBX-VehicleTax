@@ -1,0 +1,1 @@
+ALTER TABLE player_vehicles ADD COLUMN last_payment INT DEFAULT NULL;
