@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 description 'Vehicle Tax 车辆税费系统'
-version '1.0.1'
+version '1.0.2'
 author 'MySword傅剑寒'
 
 shared_script {

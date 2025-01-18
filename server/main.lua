@@ -1,6 +1,5 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
--- 定时检查缴税状态函数
 local function CheckVehicleTaxStatus()
     if Config.Debug then
         print('^9[MySword]VehTax: ^2Checking all player vehicle tax status...')
@@ -47,8 +46,6 @@ CreateThread(function()
     end
 end)
 
--- 获取玩家车辆列表
--- Get Player Vehicle List
 RegisterNetEvent('ms_vehicletax:server:getVehicleList', function()
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
@@ -66,8 +63,6 @@ RegisterNetEvent('ms_vehicletax:server:getVehicleList', function()
         print('^9[MySword]VehTax: ^2Querying ' .. #result .. ' vehicles')
     end
 
-    -- 检查和更新车辆缴税状态
-    -- Check and update vehicle tax status
     local currentTime = os.time()
     local vehicles = {}
     
@@ -109,8 +104,6 @@ RegisterNetEvent('ms_vehicletax:server:getVehicleList', function()
     TriggerClientEvent('ms_vehicletax:client:showVehicleList', src, vehicles)
 end)
 
--- 处理缴税
--- Handle Tax Payment
 RegisterNetEvent('ms_vehicletax:server:payTax', function(vehicleId, taxAmount)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
